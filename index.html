@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de excusas</title>
+</head>
+<body>
+     <div class="container">
+        <h1> Generador de Excusas</h1>
+        <div id="excuse"></div>
+        <button class="gen">🔁 Generar nueva excusa</button>
+    </div>
+     
+     <script>
+        window.onload = function() {
+            // array with the words
+            let who = ['The dog', 'My grandma', 'The mailman', 'My bird'];
+            let action = ['ate', 'peed', 'crushed', 'broke'];
+            let what = ['my homework', 'my phone', 'the car'];
+            let when = ['before the class', 'when I was sleeping', 'while I was exercising', 'during my lunch', 'while I was praying'];
+
+            function generateExcuse() {
+                let rdm1 = Math.floor(Math.random() * who.length);
+                let rdm2 = Math.floor(Math.random() * action.length);
+                let rdm3 = Math.floor(Math.random() * what.length);
+                let rdm4 = Math.floor(Math.random() * when.length);
+                document.querySelector("#excuse").innerHTML = who[rdm1] + " " + action[rdm2] + " " + what[rdm3] + " " + when[rdm4];
+            }
+
+            document.querySelector(".gen").addEventListener("click", generateExcuse);
+            generateExcuse();
+        };
+    </script>
+
+</body>
+</html>
